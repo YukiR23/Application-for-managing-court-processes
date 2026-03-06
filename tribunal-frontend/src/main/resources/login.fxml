@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.tribunal.controller.LoginController"
+      alignment="CENTER"
+      spacing="15">
+
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+
+    <Label text="Autentificare"
+           style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+    <TextField fx:id="txtUser"
+               promptText="Username"
+               prefWidth="220"/>
+
+    <HBox spacing="5" alignment="CENTER">
+        <StackPane>
+
+            <PasswordField fx:id="txtPassHidden"
+                           promptText="Parola"
+                           prefWidth="220"/>
+
+
+            <TextField fx:id="txtPassVisible"
+                       promptText="Parola"
+                       prefWidth="220"
+                       visible="false"
+                       managed="false"/>
+        </StackPane>
+
+        <Button text="👁"
+                onAction="#togglePassword"
+                prefWidth="40"/>
+    </HBox>
+
+    <Button text="Login"
+            prefWidth="140"
+            onAction="#handleLogin"/>
+
+</VBox>

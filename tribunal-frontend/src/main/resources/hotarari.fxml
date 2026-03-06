@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.*?>
+
+<VBox spacing="10"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.tribunal.controller.HotarareController">
+
+
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <TableView fx:id="tableHotarari" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colTip" text="Tip hotărâre" prefWidth="200"/>
+            <TableColumn fx:id="colData" text="Data pronunțării" prefWidth="200"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Adaugă" onAction="#handleAdd"/>
+        <Button text="Șterge" onAction="#handleDelete"/>
+    </HBox>
+
+</VBox>

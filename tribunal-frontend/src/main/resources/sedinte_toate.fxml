@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane fitToWidth="true"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.tribunal.controller.SedinteToateController">
+
+    <VBox spacing="12"
+          prefWidth="900">
+
+
+        <padding>
+            <Insets top="12" right="12" bottom="12" left="12"/>
+        </padding>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Filtre:" style="-fx-font-weight: bold;"/>
+
+            <DatePicker fx:id="dpData" promptText="Data"/>
+            <TextField fx:id="txtDosar" promptText="Nr dosar" prefWidth="140"/>
+            <CheckBox fx:id="chkFaraRezultat" text="Fără rezultat"/>
+
+            <Button text="Filtrează" onAction="#handleFiltreaza"/>
+            <Button text="Refresh" onAction="#handleRefresh"/>
+            <Button text="Ședințe importante"
+                    onAction="#handleSedinteImportante"/>
+
+        </HBox>
+
+        <VBox spacing="8"
+              style="
+                -fx-border-color: #b0bec5;
+                -fx-border-radius: 6;
+                -fx-padding: 10;
+                -fx-background-color: #f8f9fa;
+              ">
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Min. ședințe:"/>
+                <Spinner fx:id="spMinSedinte" prefWidth="80"/>
+                <Button text="Afișează procese"
+                        onAction="#handleAfiseazaProceseCuMinSedinte"/>
+            </HBox>
+
+            <Label fx:id="lblStatistica"
+                   wrapText="true"
+                   style="
+                        -fx-text-fill: #263238;
+                        -fx-font-style: italic;
+                   "/>
+        </VBox>
+
+        <TableView fx:id="table"
+                   VBox.vgrow="ALWAYS"
+                   prefHeight="400">
+
+            <columns>
+                <TableColumn fx:id="colData" text="Data" prefWidth="120"/>
+                <TableColumn fx:id="colOra" text="Ora" prefWidth="80"/>
+                <TableColumn fx:id="colSala" text="Sala" prefWidth="90"/>
+                <TableColumn fx:id="colDosar" text="Nr Dosar" prefWidth="150"/>
+                <TableColumn fx:id="colGrefier" text="Grefier" prefWidth="180"/>
+                <TableColumn fx:id="colRezultat" text="Rezultat" prefWidth="120"/>
+            </columns>
+
+        </TableView>
+
+    </VBox>
+</ScrollPane>

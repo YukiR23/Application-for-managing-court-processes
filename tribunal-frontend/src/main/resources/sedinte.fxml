@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.tribunal.controller.SedintaController">
+
+    <center>
+        <TableView fx:id="tableSedinte">
+            <columns>
+                <TableColumn fx:id="colData" text="Data"/>
+                <TableColumn fx:id="colOra" text="Ora"/>
+                <TableColumn fx:id="colSala" text="Sala"/>
+                <TableColumn fx:id="colRezultat" text="Rezultat"/>
+                <TableColumn fx:id="colGrefier" text="Grefier"/>
+
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Button fx:id="btnAdd" text="Adaugă" onAction="#handleAdd"/>
+            <Button fx:id="btnEdit" text="Editează" onAction="#handleEdit"/>
+            <Button fx:id="btnDelete" text="Șterge" onAction="#handleDelete"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
+

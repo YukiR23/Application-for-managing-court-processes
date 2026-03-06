@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.tribunal.controller.ParteController">
+
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <TableView fx:id="tableParti">
+        <columns>
+            <TableColumn fx:id="colPersoana" text="Persoană" prefWidth="200"/>
+            <TableColumn fx:id="colTip" text="Tip" prefWidth="100"/>
+            <TableColumn fx:id="colAvocat" text="Avocat" prefWidth="200"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Adaugă" onAction="#handleAdd"/>
+        <Button text="Șterge" onAction="#handleDelete"/>
+    </HBox>
+
+</VBox>

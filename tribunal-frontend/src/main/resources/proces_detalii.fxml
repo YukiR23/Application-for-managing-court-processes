@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane
+        xmlns="http://javafx.com/javafx/21"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="com.tribunal.controller.ProcesDetaliiController">
+
+    <top>
+        <VBox spacing="5" style="-fx-padding: 10;">
+            <Label fx:id="lblNrDosar" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+            <Label fx:id="lblJudecator"/>
+            <Label fx:id="lblProcuror"/>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="10" style="-fx-padding: 10;">
+            <HBox spacing="10">
+                <Button text="Ședințe" onAction="#openSedinte"/>
+                <Button text="Părți" onAction="#openParti"/>
+                <Button text="Hotărâri" onAction="#openHotarari"/>
+            </HBox>
+
+            <StackPane fx:id="tabContent"/>
+        </VBox>
+    </center>
+
+</BorderPane>
